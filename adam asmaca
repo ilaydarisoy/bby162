@@ -1,0 +1,97 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "uygulamalar.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyPFpjUhnXOiFzGzBXuU36q+",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ilaydarisoy/bby162/blob/master/adam%20asmaca\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "xu4ZOPtLL68T",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 129
+        },
+        "outputId": "916e7eef-5df3-4d10-cdc0-78761166b9a9"
+      },
+      "source": [
+        "import random\n",
+        "\n",
+        "kelimeler = [\"dolap\", \"kitap\", \"lamba\"]\n",
+        "kelime = random.choice(kelimeler)\n",
+        "tahminsayisi = 4\n",
+        "harfler = []\n",
+        "a = len(kelime)\n",
+        "b = list('_'*a)\n",
+        "print(''.join(b), end='\\e')\n",
+        "while tahminsayisi > 0:\n",
+        "  c = input(\"Harf tahmininde bulunun! :\")\n",
+        "  if c in harfler:\n",
+        "    print(\"lütfen farklı kelime tahmin ediniz!\")\n",
+        "    continue\n",
+        "\n",
+        "  elif len(c) > 1:\n",
+        "     print(\"sadece bir harf giriniz!\")\n",
+        "     continue\n",
+        "\n",
+        "else:\n",
+        "     for d in range(len(kelime)):\n",
+        "        if c == kelime[d]:\n",
+        "             print(\"doğru sonuç!\")\n",
+        "             b[d] = c\n",
+        "             harfler.append(c)\n",
+        "             print(''.join(b), end='\\e')\n",
+        "\n",
+        "        cevap = input(\"kelimeyi tahmin edebilirsiniz ['k' veya 'h'] : \")\n",
+        "           \n",
+        "     if cevap == \"k\":\n",
+        "         tahmin = input(\"kelimeyi yazabilirsiniz! : \")\n",
+        "         if tahmin == kelime:\n",
+        "            print(\"tebrikler doğru!\")\n",
+        "            break   \n",
+        "       \n",
+        "       else:\n",
+        "            tahminsayisi -= 1\n",
+        "            print(\"yanlıs tahmin! {} tane hakkınız kaldı\".format(tahminsayisi))\n",
+        "\n",
+        "            \n",
+        "    if tahminsayisi == 0:\n",
+        "        print(\"tahmin hakkınız bitmiştir. Adam asıldı.\")\n",
+        "        break"
+      ],
+      "execution_count": 90,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "IndentationError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-90-cd2667c8a97f>\"\u001b[0;36m, line \u001b[0;32m36\u001b[0m\n\u001b[0;31m    else:\u001b[0m\n\u001b[0m         ^\u001b[0m\n\u001b[0;31mIndentationError\u001b[0m\u001b[0;31m:\u001b[0m unindent does not match any outer indentation level\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
